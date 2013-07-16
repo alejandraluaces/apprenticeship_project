@@ -1,0 +1,605 @@
+/* C O L O R S  &  M I X I N S*/
+
+$darkblue:#0b2138;
+$lightblue:#416080;
+$medblue:#1f3a57;
+$background:#223242;
+$lightorange:#fbbe62;
+$orange:#f9a320;
+$white:#e0e0e0;
+$black:#333;
+$lightgreen: #8fc472;
+$green: #639f42;
+
+@mixin light {
+  font-family: "Open Sans", "Helvetica", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@mixin italic {
+  font-family: "Open Sans", "Helvetica", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+@mixin bold {
+  font-family: "Open Sans", "Helvetica", sans-serif;
+  font-weight: 600;
+}
+
+@mixin rounded {
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+@mixin top-border-rounded {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+@mixin ease-animation {
+  -webkit-transition:background-color .3s ease-in-out; 
+  -moz-transition:background-color .3s ease-in-out; 
+  transition:background-color .3s ease-in-out; 
+}
+
+@mixin big-background {
+  background-size: cover;
+  -chrome-background-size: cover;
+  -moz-background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  padding-top: 10em;
+  text-align: center;
+  height: 450px;
+    @media (max-width: 930px) {
+        height: 300px;
+        padding: 5em 0;
+      }
+}
+
+@mixin text-shadow {
+    text-shadow: 2px 2px 2px #000;
+    -moz-text-shadow: 2px 2px 2px #000;
+}
+
+@mixin box-shadow {
+  box-shadow: 2px 2px 4px #000;
+  -moz-box-shadow: 2px 2px 4px #000;
+  -chrome-box-shadow: 2px 2px 4px #000;
+}
+
+@mixin box-sizing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -chrome-box-sizing: border-box;
+}
+
+/* B A S I C S ////////////////////////////////*/
+
+body {
+  background: url('/images/tweed.png');
+  background-repeat: repeat;
+}
+
+.container {
+  width: 90%;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  font-size: 1em;
+  @include light;
+}
+
+strong {
+  @include bold;
+}
+
+em {
+  @include italic;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  padding: .493em 1.125em;
+  color: $white;
+  width: auto;
+  font-size: 1.165em;
+  @include light;
+  @include rounded;
+}
+
+/* H E A D E R ////////////////////////////////*/
+
+header {
+  margin: 0 auto;
+  padding: 0 0 1em 0;
+  text-align: center;
+  background: #171d2d; /* Old browsers */
+  background: -moz-linear-gradient(top,  #171d2d 0%, #223242 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#171d2d), color-stop(100%,#223242)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #171d2d 0%,#223242 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #171d2d 0%,#223242 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #171d2d 0%,#223242 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #171d2d 0%,#223242 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#171d2d', endColorstr='#223242',GradientType=0 ); /* IE6-9 */
+  a {
+    color: $white;
+    -webkit-transition:color .3s ease-in-out; 
+    -moz-transition:color .3s ease-in-out; 
+    transition:color .3s ease-in-out; 
+  }
+  a:hover {
+    color: $orange;
+  }
+}
+
+.dashboard {
+  border-bottom: 1px $darkblue;
+  width: 100%;
+  height: 2em;
+  padding: 0;
+  position: fixed;
+   @media (max-width: 400px) {
+    position: static;
+    padding-top: .3em;
+   }
+  span {
+    display: inline;
+    color: $white;
+    margin-right: .4em;
+    font-size: 1.1em;
+  }
+}
+
+.admin-icons {
+  float: right;
+  width: auto;
+  margin: .4em;
+  padding-bottom: .3em;
+  border-bottom: 1px dotted $medblue;
+   @media (max-width: 500px) {
+    float: none;
+   }
+  p {
+    display: inline;
+    color: $white;
+      @media (max-width: 500px) {
+       display: none;
+      }
+  }
+  a {
+    color: $lightblue;
+    margin: 0 .5em;
+    font-size: .85em;
+  }
+}
+
+.logo {
+  max-width: 99px;
+  margin: auto;
+  padding-top: 4em;
+      @media (max-width: 500px) {
+        width: 20%;
+      }
+}
+
+h1 {
+  font-family: "Syncopate", "Helvetica", sans-serif;
+  font-size: 2.027em;
+  text-transform: uppercase;
+  margin: 0 0 .5em 0;
+  color: $white;
+}
+
+ul {
+  margin: 27px auto 10px auto;
+  padding-top: 16px;
+    @media (max-width: 930px) {
+      margin: 1em auto;
+      padding: 0;
+    }
+}
+
+li {  
+  list-style: none;
+  display: inline-block;
+  margin-right: 8%;
+  font-size: 1em;
+  letter-spacing: 1px;  
+  @include light;
+    @media (max-width: 930px) {
+      display: block;
+      font-size: 1em;
+      text-transform: uppercase;
+      margin: 0 auto;
+    }
+}
+
+.highlight {
+  border-bottom: 4px solid $orange;
+    @media (max-width: 930px) {
+     border:none;
+     background-color: rgba(255,255,255,.3);
+    }
+}
+
+h2 {
+  color: $white;
+  font-size: 1.602em;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @include bold;
+  @include text-shadow;
+    @media (max-width: 500px) {
+      font-size: 1.266em;
+    }
+}
+
+h3 {
+  @include italic;
+  font-size: 1.125em;
+  color: $white;
+  margin: .2em 0 1.266em 0;
+  @include text-shadow;
+      @media (max-width: 500px) {
+        font-size: 1em;
+      }
+}
+
+/* T R A V E L   I N F O ////////////////////////////*/
+
+#travel-info {
+  background:url(/images/citybg.jpg) 50% 0 no-repeat fixed;
+  @include big-background;
+  @include box-sizing;
+   input[type="text"] {
+    width: 50%;
+   }
+}
+
+.travel {
+  background-color: $green;
+  @include ease-animation;
+  display: inline;
+  position: relative;
+  left: -8px;
+  padding-top: .3em;
+}
+
+.travel:hover {
+  background-color: $lightgreen; 
+}
+
+
+/* F O R M   A R E A ////////////////////////////////*/
+
+#flight-finder {
+  font-size: 1em;
+  padding: 2em 0;
+  @include light;
+}
+
+label {
+  cursor: default;
+  display: block;
+  margin: 0;
+  padding: 0;
+  @include bold;
+}
+
+fieldset {
+  border: none;
+  background-color: $white;
+  margin: 1em auto;
+  padding: 1em;
+  @include rounded;
+  @include box-shadow;
+
+  a {
+    color: $lightblue;
+    @include bold;
+  }
+   @media (max-width: 723px) {
+    margin-bottom: 0;
+   }
+}
+
+.tab {
+  width: 20%;
+  display: inline-block;
+  margin: 0 7px 0 0;
+  position: relative;
+  top: 19px;
+  text-align: center;
+  font-size: 1.266em;
+  background-color: $white;
+  overflow: hidden;
+  padding: .5em;
+  text-transform: uppercase;
+  @include top-border-rounded;
+  @include light;
+   @media (max-width: 500px) {
+     width: 24%;
+     font-size: .8em;
+     padding-left: 1em;
+     @include bold;
+    }
+}
+
+.inactive {
+  background-color: $medblue;
+  top: 15px;
+  color: $lightblue;
+}
+
+.row {
+  width: 100%;
+  p {
+    margin-top: 0;
+  }
+}
+
+.half {
+  width: 49%;
+  display: inline-block;
+  float: left;
+  margin-top: .8em;
+  @media (max-width: 507px) {
+    float: none;
+    display: block;
+    width: 95%;
+  }
+}
+
+.airport-fields {
+    input[type="text"] {
+    width: 90%;
+  }
+}
+
+.date-fields {
+  input[type="text"] {
+    width: 50%;
+  }
+}
+
+.flight-options {
+  margin-top: .2em;
+}
+
+input[type="text"] {
+    border:1px solid $white;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 1);
+    padding:8px;
+    @include rounded;
+    @include italic;
+}
+
+input[type="text"]:focus {
+    border: 1px solid $orange;
+    -webkit-transition: border linear .2s;
+    -moz-transition: border linear .2s;
+    transition: border linear .2s;
+    placeholder: hidden;
+}
+
+input:focus::-webkit-input-placeholder { 
+  color:transparent; 
+}
+
+input:focus:-moz-placeholder { 
+  color:transparent; 
+}
+
+.search-flight {
+  @include rounded;
+  text-transform: uppercase;
+}
+
+.trip-toggle {
+  width: 33.333%;
+  display: inline-block;
+  cursor: pointer;
+  padding: .5em;
+  margin: 1em 0;
+  color: $white;
+  text-align: center;
+  @include box-sizing;
+  @include light;
+  font-size: 1.125em;
+      @media (max-width: 930px) {
+        font-size: .8em;
+        padding: .1em;
+      }
+}
+
+.one-way {
+  background-color: #a7c1d5;
+  color: $darkblue;
+}
+
+.round-trip {
+  background-color: #75a3cd;
+  color: $darkblue;
+}
+
+.multi {
+  background-color: #5798c8;
+  color: $darkblue;
+}
+
+input[type="submit"] { 
+  background-color:$green; 
+  @include ease-animation;
+}
+
+input[type="submit"]:hover {
+  background-color:$lightgreen; 
+}
+
+/* S M A L L E R   W I N D O W S ////////////////////*/
+
+.margin-bottom {
+  margin-bottom: 3em;
+}
+
+.column {
+  width: 30.44%;
+  margin: 0 1.2%;
+  display: inline-block;
+  padding: 1em;
+  vertical-align: top;
+  background-color: $white;
+  border-top: 1.125em solid $lightblue;
+  text-align: left;
+  @include rounded;
+  @include box-shadow;
+  @include box-sizing;
+    @media (max-width: 723px) {
+    margin: 1.5em .5em;
+    display: block;
+    width: 90%;
+    }
+
+    label {
+      font-size: 1em;
+    }
+
+    input[type="text"] {
+      margin-bottom: 1em;
+    }
+}
+
+h4 {
+  font-size: 1.802em;
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+  color: $darkblue;
+  @include light;
+}
+
+h5 {
+  font-size: 1.266em;
+  color: $background;
+  padding: 0 0 1em 0;
+  margin: 0;
+  @include italic;
+}
+
+.mileage-login {
+  border-top: 1.125em solid $orange;
+}
+
+.drop-down {
+  margin-bottom: 1em;
+}
+
+.ok {
+  background-color:$green; 
+  @include ease-animation;
+  float: right;
+  @media (max-width: 500px) {
+    display: block;
+    float: none;
+    width: 10%;
+    }
+}
+
+.ok:hover {
+  background-color: $lightgreen;
+}
+
+/* M I L E A G E   P L U S ////////////////////////////////*/
+
+#mileage-plus {
+  background:url(http://unsplash.s3.amazonaws.com/batch%202/05.jpg) 50% 0 no-repeat fixed;
+  @include big-background;
+  @include box-sizing;
+    h3 {
+      color: $white;
+    }
+}
+
+.mileage {
+  background-color: $orange;
+  display: inline-block;
+  @include box-shadow;
+  @include rounded;
+  @include ease-animation;
+
+  a{
+    color:$white;
+  }
+}
+
+.loyalty:hover {
+  background-color: $lightorange;
+  @include ease-animation;
+}
+
+.loyalty:visited {
+  background-color: $orange;
+}
+
+/* F O O T E R ////////////////////////////////*/
+
+footer {
+  padding: 2em 0;
+  margin: 0 auto;
+  h5 {
+    color: $lightorange;
+    padding-bottom: .39em;
+    border-bottom: 1px solid $lightblue;
+    margin-bottom: .78em;
+  }
+  a {
+    display: block;
+    color: $white;
+    font-size: 1em;
+    @include light;
+  }
+  p {
+    font-size: .85em;
+    color: $lightblue;
+    padding: 0;
+    margin: 0;
+    @include italic;
+  }
+
+  .top-margin {
+    margin-top: 1.5em;
+  }
+}
+
+#footer {
+
+}
+
+.third {
+  width: 29%;
+  margin-left: 4%;
+  display: inline-block;
+  padding-bottom: 2em;
+  float: left;
+  vertical-align: top;
+  @media (max-width: 500px) {
+    display: block;
+    width: 100%;
+    }
+}

@@ -1,0 +1,221 @@
+---
+title: United Airlines
+---
+<html>
+  <head>
+  	<!--normal stuff-->
+  	<meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+
+    <!--fonts-->
+	  <link href='http://fonts.googleapis.com/css?family=Syncopate|Open+Sans:300italic,300,600' rel='stylesheet' type='text/css'>
+
+  	<!--stylesheets-->
+  	<link rel="stylesheet" href="stylesheets/normalize.css" media="screen, print">
+  	<link rel="stylesheet" href="stylesheets/styles.css" media="screen, print">
+  	<link rel="stylesheet" href="stylesheets/dashboard-icons-embedded.css" media="screen, print">
+
+  	<!--scripts-->
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  	<script type="text/javascript" src="javascripts/jquery.parallax-1.1.3.js"></script>
+    <script type="text/javascript" src="javascript/jquery-1.9.1.min.js"></script> 
+  </head>
+  <body>
+    <header>
+      <div class="dashboard">
+     	  <section class="admin-icons">
+     		  <p>Displaying in <strong>English</strong>.  </p><a href="#">Select Another Language?</a>
+     	    <a href=""><span class="icon-cog"></span></a>
+         	<span class="icon-help-circled"></span>
+         	<span class="icon-phone"></span>
+         	<span class="icon-lock"></span>
+     	  </section>
+      </div>
+      <div class="container">
+      	<div class="logo">
+      	 <img src="/images/united.png">
+        </div>
+      	<h1>united</h1>
+        <nav>
+          <ul>
+        	  <a href="#"><li class="highlight">home</li></a>
+        	  <a href="#"><li>reservations</li></a>
+        	  <a href="#"><li>deals & offers</li></a>
+        	  <a href="#"><li>products & services</li></a>
+        	  <a href="#footer" class='scroll'><li>about</li></a>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+  <section id="travel-info">
+    <div class="container">
+      <h2>Where are you traveling?</h2>
+      <h3>Find out more information about where you're going for when you get there.</h3>
+	    <input class id="destination" placeholder="City, Town, Country, or Province" type="text">
+	    <a href ="#"><span class="icon-ok travel button"></span></a>
+     </div>
+  </section>
+
+  <section id="flight-finder">
+    <div class="container">		
+      <div class="tab active">Flights</div>
+      <div class="tab inactive">Car Rental</div>
+      <div class="tab inactive">Hotels</div>	
+
+      <form action="" method="" role="form">
+      <fieldset>
+        <div class="trip-toggle one-way">Round trip
+        </div><div class="trip-toggle round-trip">One way
+        </div><div class="trip-toggle multi">Multi-Destination</div>
+    	  <section class="row">
+    	   <div class="half airport-fields">
+    	    <label for="from">From Here</label>
+    	     <input class id="from" placeholder="City or Airport" type="text" tabindex="1">
+    	   </div>
+    	   <div class="half airport-fields">
+    	    <label for="to">To There</label>
+    	     <input class id="to" placeholder="City or Airport" type="text" tabindex="2">
+    	   </div>
+    	  </section>
+
+    	  <section class="row">
+          <div class="half date-fields">
+    	      <label for="departure">Departure Date</label>
+    	      <input class id="departure" placeholder="11/08/2013" type="text" tabindex="3">
+	        </div>
+          <div class="half date-fields">
+	          <label for="return">Return Date</label>
+	          <input class id="return" placeholder="11/08/2013" type="text" tabindex="4">
+          </div>
+        </section>
+
+        <section class="row">
+      	  <div class="half flight-options">
+  	        <input type="checkbox" name="vehicle" value="3-day-difference">Find lower fare +/- 3 days
+  	      </div>
+          <div class="half flight-options">
+  	        <input type="checkbox" name="vehicle" value="nearby-airports">Search nearby airports
+  	      </div>
+  	    </section>
+
+	  <section class="row">
+	   <div class="half">
+	    <label>Number of Adults</label>
+ 	     <select id = "adultPassengers">
+          <option value = "1">1</option>
+          <option value = "2">2</option>
+          <option value = "3">3</option>
+          <option value = "4">4</option>
+         </select>
+       </div>
+       <div class="half">
+        <label for="to">Offer Code</label>
+	     <input class id="offer-code" placeholder="12345E" type="text" tabindex="5">
+	   </div>
+      </section>
+
+      <section class="row">
+       <div class="half">
+        <a href="#">Advanced Search Options</a>
+	    <p>Children, country of purchase..</p>
+	   </div>
+	   <div class="half">
+        <input type="submit" role="button" class="button" value="Submit">
+       </div>
+      </section>
+     </fieldset>
+    </div>
+   </section>
+
+   <section class="column">
+   	<div class="container margin-bottom">
+   	 <h4>Print</h4>
+   	 <h5>your boarding pass</h5>
+   	  <label for="from">Confirmation <em>or</em><br> Mileage Plus Number</label>
+	   <input class id="from" placeholder="235096GA" type="text">
+	   <a href ="#"><span class="icon-ok ok button"></span></a>
+    </section>
+
+    <section class="column">
+   	 <h4>Check</h4>
+   	 <h5>your flight status</h5>
+	  <label for="departure-check">Departing From</label>
+	   <input class id="departure-check" placeholder="City or Airport" type="text">
+	  <label for="arrival-check">Arriving To</label>
+	   <input class id="arrival-check" placeholder="City or Airport" type="text">
+	  <div class="drop-down">
+	   <label>Travel Date</label>
+ 	    <select id = "travelDate">
+         <option value = "1">Yesterday, July 15, 2013</option>
+         <option value = "2">Today, July 16, 2013</option>
+         <option value = "3">Tomorrow, July 17, 2013</option>
+        </select>
+      </div>
+	  <label for="flightnumber">Flight Number</label>
+	   <input class id="flightnumber" placeholder="3849" type="text">
+	  <a href ="#"><span class="icon-ok ok button"></span></a>
+   </section>
+
+   <section class="column mileage-login">
+   	<h4>Mileage</h4>
+   	<h5>Plus</h5>
+     <label for="mp-user">Username/E-mail</label>
+      <input class id="mp-user" placeholder="user@carrier.com" type="text">
+     <label for="mp-password">Password</label>
+      <input class id="mp-password" placeholder="*********" type="text">
+     <a href ="#"><span class="icon-ok ok button"></span></a>
+   </section>
+  </div>
+
+  <section id="mileage-plus">
+   <h2>Mileage Plus Loyalty Program</h2>
+   <h3>Join Mileage Plus to get rewarded next time you travel.</h3>
+   <div class="mileage button"><a href ="#">Find out more</a></div>
+  </section>
+
+  <footer id="footer">
+   <div class="container">
+    <section class="third">
+   	 <h5>Search</h5>
+   	  <a href="#">Site Map</a>
+   	  <a href="#">Search united.com</a>
+   	  <a href="#">Search Travel Agents</a>
+    </section>
+    <section class="third">
+   	 <h5>About United</h5>
+   	  <a href="#">Business Services</a>
+   	  <a href="#">Careers</a>
+   	  <a href="#">Cargo</a>
+   	  <a href="#">Our United Customer Commitment</a>
+   	  <a href="#">Contract of Carriage</a>	  
+    </section>
+    <section class="third">
+   	 <h5>Legal</h5>
+   	  <a href="#">unitedcontinentalholdings.com</a>
+   	  <a href="#">Legal Information</a>
+   	  <a href="#">Privacy Policy</a>
+   	  <a href="#">Lengthy Tarmac Delay Plan</a>
+ 	  <p class="top-margin">Copyright 2013 United Airlines, Inc.</p>
+ 	  <p>All Rights Reserved.</p>
+    </section>
+   </div>
+  </footer>
+ </body>
+
+  <script type="text/javascript">
+   $(document).ready(function(){
+     $('#travel-info').parallax("50%", 0.4);
+       $('#mileage-plus').parallax("50%", 0.4);
+    })
+  </script>
+
+  <script type="text/javascript">
+   $(document).ready(function($) {
+     $(".scroll").click(function(event){
+       event.preventDefault();
+     $('html,body').animate({scrollTop:$(this.hash).offset().top}, 600);
+      });
+    });
+  </script>
+</html>
