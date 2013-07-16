@@ -333,6 +333,11 @@ fieldset {
       color: $lightblue;
       @include bold;
     }
+    span {
+      font-size: 1.75em;
+      color: $darkblue;
+      margin-left: .3em;
+    }
     @media (max-width: 723px) {
       margin-bottom: 0;
      }
