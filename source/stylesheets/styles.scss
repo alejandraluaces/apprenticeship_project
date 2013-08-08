@@ -258,7 +258,7 @@ fieldset {
   border: none;
   background-color: $white;
   margin: 1em auto;
-  padding: 1em;
+  padding: 2em;
   @include rounded;
   @include box-shadow;
     a {
@@ -270,7 +270,7 @@ fieldset {
       color: $darkblue;
       margin-left: .3em;
     }
-    @media (max-width: 723px) {
+    @media (max-width: 500px) {
       margin: 2em 0 0 0;
      }
 }
@@ -322,7 +322,7 @@ fieldset {
   float: left;
   margin-top: .8em;
   width: 49%;
-    @media (max-width: 507px) {
+    @media (max-width: 500px) {
       display: block;
       float: none;
       width: 95%;
@@ -383,7 +383,6 @@ input[type="checkbox"] {
   cursor: pointer;
   display: inline-block;
   font-size: 1.125em;
-  margin: 1em 0;
   padding: .5em;
   text-align: center;
   width: 33.333%;
