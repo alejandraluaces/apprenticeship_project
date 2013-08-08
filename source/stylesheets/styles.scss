@@ -1,4 +1,5 @@
-/* C O L O R S  &  M I X I N S////////////////////*/
+
+@import 'mixins';
 
 $darkblue:#0b2138;
 $lightblue:#416080;
@@ -14,84 +15,6 @@ $black:#333;
 $lightgreen: #8fc472;
 $green: #639f42;
 
-@mixin light {
-  font-family: "Open Sans", "Helvetica", sans-serif;
-  font-style: normal;
-  font-weight: 300;
-}
-
-@mixin italic {
-  font-family: "Open Sans", "Helvetica", sans-serif;
-  font-style: italic;
-  font-weight: 300;
-}
-
-@mixin bold {
-  font-family: "Open Sans", "Helvetica", sans-serif;
-  font-weight: 600;
-}
-
-@mixin rounded {
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-}
-
-@mixin top-border-rounded {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-@mixin border-transition {
-  -webkit-transition: border linear .2s;
-  -moz-transition: border linear .2s;
-  transition: border linear .2s;
-}
-
-@mixin ease-animation {
-  -webkit-transition:background-color .3s ease-in-out; 
-  -moz-transition:background-color .3s ease-in-out; 
-  transition:background-color .3s ease-in-out; 
-}
-
-@mixin color-transition {
-  -webkit-transition:color .3s ease-in-out;
-  -moz-transition:color .3s ease-in-out; 
-  transition:color .3s ease-in-out; 
-}
-
-@mixin big-background {
-  background-repeat: no-repeat;
-  background-size: cover;
-  -chrome-background-size: cover;
-  -moz-background-size: cover;
-  height: 450px;
-  margin: 0 auto;
-  padding-top: 10em;
-  text-align: center;
-    @media (max-width: 930px) {
-        height: 300px;
-        padding: 5em 0;
-      }
-}
-
-@mixin text-shadow {
-    text-shadow: 2px 2px 2px #000;
-    -moz-text-shadow: 2px 2px 2px #000;
-}
-
-@mixin box-shadow {
-  box-shadow: 2px 2px 4px #000;
-  -moz-box-shadow: 2px 2px 4px #000;
-  -chrome-box-shadow: 2px 2px 4px #000;
-}
-
-@mixin box-sizing {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -chrome-box-sizing: border-box;
-}
-
 /* B A S I C S ////////////////////////////////*/
 
 body {
@@ -102,7 +25,6 @@ body {
 .container {
   max-width: 940px;
   margin: 0 auto;
-  width: 90%;
 }
 
 img {
@@ -149,6 +71,7 @@ header {
   margin: 0 auto;
   padding: 0 0 1em 0;
   text-align: center;
+
     a {  
       color: $white;
       @include color-transition;
@@ -167,26 +90,29 @@ header {
     }
 }
 
+.language-select {
+  @media (max-width: 930px) {
+    display: block;
+  }
+  @media (max-width: 400px) {
+    display: none;
+  } 
+}
+
 .dashboard {
-   border-bottom: 1px $darkblue;
    height: 2em;
    padding: 0;
-   position: fixed;
    width: 100%;
      @media (max-width: 400px) {
-       position: static;
        padding-top: .3em;
      }
      span {
-       color: $white;
        display: inline;
-       font-size: 1.1em;
-       margin-right: .4em;
+       font-size: 1.5em;
      }
 }
 
 .admin-icons {
-  border-bottom: 1px dotted $medblue;
   float: right;
   margin: .4em;
   padding-bottom: .3em;
@@ -251,15 +177,14 @@ li {
 
 .highlight {
   border-bottom: 4px solid $orange;
-    @media (max-width: 930px) {
-     border:none;
-     background-color: rgba(255,255,255,.3);
+    @media (max-width: 930px){
+      border-bottom: 0px solid;
     }
 }
 
 h2 {
   color: $white;
-  font-size: 1.602em;
+  font-size: 2.602em;
   letter-spacing: 2px;
   margin: 0;
   text-transform: uppercase;
@@ -272,10 +197,9 @@ h2 {
 
 h3 {
   color: $white;
-  font-size: 1.125em;
+  font-size: 1.5em;
   margin: .2em 0 1.266em 0;
-  @include text-shadow;
-  @include italic;
+  @include light;
     @media (max-width: 500px) {
       font-size: 1em;
     }
@@ -289,22 +213,30 @@ h3 {
   @include box-sizing;
     input[type="text"] {
       width: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
     }
 }
 
 .travel {
   background-color: $green;
-  display: inline;
-  left: -8px;
-  padding-top: .3em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 5px;
+  display: inline-block;
+  left: -5px;
+  padding: .38em 1.125em;
   position: relative;
+  vertical-align: middle;
   @include ease-animation;
 }
 
 .travel:hover {
   background-color: $lightgreen; 
 }
-
 
 /* F O R M   A R E A ////////////////////////////////*/
 
@@ -339,7 +271,7 @@ fieldset {
       margin-left: .3em;
     }
     @media (max-width: 723px) {
-      margin-bottom: 0;
+      margin: 2em 0 0 0;
      }
 }
 
@@ -359,17 +291,23 @@ fieldset {
   @include top-border-rounded;
   @include light;
     @media (max-width: 500px) {
-      font-size: .8em;
-      padding-left: 1em;
-      width: 24%;     
+      font-size: 1em;
+      border-radius: 0;
+      display: block;
+      width: 80%;
+      margin: 0 auto;    
       @include bold;
-     }
+    }
 }
 
 .inactive {
   background-color: $medblue;
   color: $lightblue;
   top: 15px;
+}
+
+.active {
+  padding-top: 14px;
 }
 
 .row {
@@ -452,8 +390,10 @@ input[type="checkbox"] {
   @include box-sizing;
   @include light;
     @media (max-width: 930px) {
-      font-size: .8em;
+      font-size: 1em;
       padding: .1em;
+      display: block;
+      width: 100%
     }
 }
 
@@ -558,7 +498,7 @@ h5 {
 /* M I L E A G E   P L U S ////////////////////////////////*/
 
 #mileage-plus {
-  background:url('/images/beach.jpg') 50% 0 no-repeat fixed;
+  background:url('http://unsplash.s3.amazonaws.com/batch%207/Top_view.jpg') no-repeat fixed;
   @include big-background;
   @include box-sizing;
     h3 {
@@ -569,8 +509,8 @@ h5 {
 .mileage {
   background-color: $orange;
   display: inline-block;
-  @include box-shadow;
   @include rounded;
+  @include bold;
   @include ease-animation;
     a{
       color:$white;

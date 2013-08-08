@@ -24,7 +24,8 @@ title: United Airlines
     <header>
       <div class="dashboard">
      	  <section class="admin-icons">
-     		  <p>Displaying in <strong>English</strong>.  </p><a href="#">Select Another Language?</a>
+     		  <p>Displaying in <strong>English</strong>.  </p>
+          <a href="#" class="language-select">Select Another Language?</a>
      	    <a href="" alt="Account Settings"><span class="icon-cog"></span></a>
          	<a href="" alt="Help"><span class="icon-help-circled"></span></a>
          	<a href="" alt="Contact Us"><span class="icon-phone"></span></a>
@@ -52,8 +53,8 @@ title: United Airlines
     <div class="container">
       <h2>Where are you traveling?</h2>
       <h3>Find out more information about where you're going for when you get there.</h3>
-	    <input class id="destination" placeholder="City, Town, Country, or Province" type="text">
-	    <a href ="#"><span class="icon-ok travel button"></span></a>
+	    <input placeholder="City, Town, Country, or Province" type="text">
+	    <a href ="#" class="travel button"><span class="icon-ok"></span></a>
      </div>
   </section>
 
@@ -86,7 +87,7 @@ title: United Airlines
 	        </div>
           <div class="half date-fields">
 	          <label for="return">Return Date</label>
-	          <input class id="return" placeholder="11/08/2013" type="text" tabindex="4">
+	          <input class id="return" placeholder="11/08/2013" type="text" tabindex="4"><span class="icon-calendar-empty"></span>
           </div>
         </section>
 
@@ -207,7 +208,6 @@ title: United Airlines
   <script type="text/javascript">
    $(document).ready(function(){
      $('#travel-info').parallax("50%", 0.4);
-       $('#mileage-plus').parallax("50%", 0.4);
     })
   </script>
 
