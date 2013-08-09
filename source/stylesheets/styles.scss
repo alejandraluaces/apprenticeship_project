@@ -432,7 +432,7 @@ input[type="submit"]:hover {
   background-color: $white;
   border-top: 1.125em solid $lightblue;
   display: inline-block;
-  margin: 0 1.2%;
+  margin: 0 3.8% 0 0;
   padding: 1em;  
   text-align: left;  
   vertical-align: top;
@@ -473,6 +473,7 @@ h5 {
 
 .mileage-login {
   border-top: 1.125em solid $orange;
+  margin-right: 0;
 }
 
 .drop-down {
