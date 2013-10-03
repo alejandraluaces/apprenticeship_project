@@ -1,7 +1,7 @@
 United Project
 ==============
 
-Redesigning United website
+Redesigning United website for funsies.
 
 
 #How To Get Up and Running#
